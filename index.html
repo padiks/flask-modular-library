@@ -90,6 +90,27 @@ a:hover {
     0%, 50%, 100% { opacity: 1; }
     25%, 75% { opacity: 0.3; }
 }
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  body { 
+    padding: 10px; /* remove global padding */
+  }
+
+  .container,
+  .container-fluid {
+    padding-left: 10px;  /* reduce Bootstrap’s default 15px+ */
+    padding-right: 10px;
+  }
+
+  p {
+    font-size: 1.25rem;     /* readable size for phones */
+    line-height: 1.6;       /* looser for readability */
+    margin-left: 0;         /* remove unnecessary paragraph indent */
+    margin-right: 0;
+    /* text-align: justify; optional: book-style alignment */
+  }
+}
 </style>
 </head>
 <body>
