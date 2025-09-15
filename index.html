@@ -33,9 +33,9 @@ h1 {
   line-height: 1.6;
 }
 p { 
-	font-size: 1.5rem;
-	line-height: 1.5;
-	line-height: 1.6;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  line-height: 1.6;
 }
 a {
   color: #888; 
@@ -45,7 +45,31 @@ a {
   transition: color 0.2s ease;
 }
 a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
+}
+hr.gray {
+  border: none;
+  height: 4px;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  border-radius: 2px;
+  margin-top: 0.5em;   /* reduced top space */
+  margin-bottom: 1.5em; /* increased bottom space */
+}
+hr {
+  border: none;
+  height: 4px;
+  background: linear-gradient(to right, 
+    transparent, 
+    #ff512f, 
+    #dd2476, 
+    transparent
+  );
+  border-radius: 2px;
+  margin-top: 0.5em;    /* reduced top space */
+  margin-bottom: 1.5em; /* increased bottom space */
+  width: 60%;           /* shorter line */
+  margin-left: auto;
+  margin-right: auto;   /* center align */
 }
 .book-container {
 	max-width: 960px;   /* fixed width like a book */
@@ -90,13 +114,11 @@ a:hover {
     0%, 50%, 100% { opacity: 1; }
     25%, 75% { opacity: 0.3; }
 }
-
 /* Mobile adjustments */
 @media (max-width: 767px) {
   body { 
     padding: 10px; /* remove global padding */
   }
-
   .container,
   .container-fluid {
     padding-left: 10px;  /* reduce Bootstrap’s default 15px+ */
@@ -147,3 +169,4 @@ window.onload = function() {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
