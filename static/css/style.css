@@ -1,0 +1,358 @@
+/* ==========================================================
+   demo.css
+   https://www.getpapercss.com/assets/demo.css
+   ========================================================== */
+body {
+  background-image: url("../img/geometry2.png")
+}
+html.dark  body {
+  background: #41403e;
+}
+#top {
+    max-width: 1440px;
+}
+.demo .row .col {
+    background-color: #eee;
+}
+.demo .row .col:nth-child(even) {
+    background-color: #ddd;
+}
+.docs {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.summary a {
+    color: #41403e;
+}
+img.no-responsive {
+    max-width: -webkit-fill-available;
+    max-width: -moz-available;
+}
+.to-top {
+    opacity: 1;
+    display: inline-block;
+    padding: 1em;
+    position: fixed;
+    bottom: 1em;
+    right: 1em
+}
+.to-top .paper-btn {
+    padding: .6em 1em;
+    border-top-left-radius: 185px 160px;
+    border-top-right-radius: 200px 195px;
+    border-bottom-right-radius: 160px 195px;
+    border-bottom-left-radius: 185px 190px
+}
+.demo-title:hover + .to-top {
+    opacity: 0
+}
+.sidebar-title a {
+  color: inherit;
+  background: none;
+}
+.collapsible.full-width {
+  width: 100%;
+}
+
+/* ==========================================================
+   Book-Readable Typography Add-on for PaperCSS
+   (Safe version that won't break layout)
+   ========================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Neucha", Arial, Helvetica, sans-serif !important;
+  line-height: 1.7;
+  color: #222;
+  background-color: #fff;
+}
+
+/* Headings — smaller and more natural scale */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "IM Fell English", Arial, sans-serif;
+  font-weight: normal;
+  line-height: 1.3;
+  color: #111;
+}
+
+/* Logical hierarchy */
+h1 { font-size: 2.5rem; margin-top: 1.5rem; margin-bottom: 0rem; }
+h2 { font-size: 2rem; margin-top: 1.3rem; margin-bottom: 0.8rem; }
+h3 { font-size: 1.6rem; margin-top: 1.2rem; margin-bottom: 0.6rem; }
+h4 { font-size: 1.3rem; margin-top: 1rem; margin-bottom: 0.5rem; }
+h5 { font-size: 1.1rem; margin-top: 0.8rem; margin-bottom: 0.4rem; }
+h6 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+h1:first-of-type,
+h2:first-of-type {
+  margin-top: 0.5rem !important;
+}
+
+/* Paragraphs — relaxed and balanced */
+p {
+  font-family: "Neucha", Arial, Helvetica, sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+/* Optional: Slightly softer links */
+a {
+  color: #3366cc;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.paper a {
+  text-decoration: none !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.paper a:hover {
+  text-decoration: none !important;
+  background-color: #fff8cc !important; /* light yellow */
+  color: inherit !important;
+}
+
+footer.attribution {
+  text-align: center !important; 
+  color: #999 !important;        
+  padding: 1em 0 !important;
+}
+
+footer.attribution p {
+  margin: 0 !important;
+}
+
+footer.attribution a {
+  color: #999 !important;        
+  text-decoration: none !important; 
+}
+
+footer.attribution a:hover {
+  color: #666 !important;        
+  background-color: #fff8cc !important; /* light yellow */
+}
+
+footer p {
+	text-align: center;
+  font-size: 0.9em !important;   
+}
+
+/* Underline and disabled text styling:
+   - `u`: custom light gray underline using gradient
+   - `.d`: disabled/gray text with default bullet preserved */
+u {
+  text-decoration: none;
+  background-image: linear-gradient(to right, #ccc, #eee);
+  background-repeat: no-repeat;
+  background-size: 100% 0.12em; 
+  background-position: 0 1.15em;
+  padding-bottom: 0.3em;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Dark mode adjustments for u */
+html.dark u {
+  background-image: linear-gradient(to right, #555, #777); /* Darker gradient for underline */
+  color: #f1efe6; 
+}
+
+.d {
+  color: #999 !important;
+  font-weight: 500 !important;
+  cursor: default !important;
+  text-decoration: none !important;
+}
+
+.d::marker {
+  color: initial !important;
+}
+
+blockquote {
+	height: 100%;
+	margin-bottom: -15px !important;
+	font-family: serif, cursive;
+	font-weight: 100;
+	font-size: 2rem;
+	max-width: 95%;       
+	line-height: 1.4;
+	position: relative;
+	margin: 0 auto;         
+	padding: .5rem 0.5rem;
+}
+
+blockquote:before {
+	content: '“';
+	position: absolute;
+	color: #f1efe6;
+	font-size: 6rem;
+	left: -2.2rem;
+	top: -1.4rem;
+}
+
+blockquote:after {
+	content: none;
+}
+
+blockquote p {
+  background-color: #f4f4f4;
+  padding: 5px 10px;
+  border-radius: 12px;	
+}
+
+.q {
+  background-color: #f5f5f5; 
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.q p {
+  color: #333; 
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Dark mode adjustments for .q */
+html.dark .q {
+  background-color: var(--main-background); 
+  color: var(--primary-text); 
+}
+
+html.dark .q p {
+  color: var(--primary-text); 
+}
+
+/* Default light mode text color */
+html {
+  --primary-text: #41403e; 
+  --secondary-text: #1f476b;
+  --success-text: #265927;
+  --warning-text: #71651c;
+  --danger-text: #7c161e;
+  --muted-text: #949ba2;
+}
+
+html.dark {
+  /* Light text for dark mode */
+  --primary-text: #fff; 
+  --secondary-text: #b0b0b0;
+  --success-text: #82ca84;
+  --warning-text: #d9c966;
+  --danger-text: #e77780;
+  --muted-text: #949ba2;
+}
+
+/* Apply to the body and all text elements */
+body {
+  color: var(--primary-text); 
+}
+
+h1, h2, h3, h4, h5, h6, p, a, li, span {
+  color: var(--primary-text); 
+}
+
+/* If you have specific text elements you want to target differently in dark mode, do so here */
+html.dark p, html.dark a {
+  color: var(--primary-text); 
+}
+
+/* Dark mode adjustments for blockquote */
+html.dark blockquote {
+  background-color: var(--main-background); 
+  color: var(--primary-text); 
+}
+
+html.dark blockquote:before {
+  color: var(--primary-text); 
+}
+
+pre, code {
+	margin: 0;           
+	padding-top: 0;      
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* 3 rem space between tags */
+}
+
+.tag {
+  background-color: #f4f4f4;
+  padding: 5px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.tag:hover {
+  background-color: #ddd;
+}
+
+
+/* Mobile fix for PaperCSS layout */
+@media (max-width: 768px) {
+	/* Make the main content occupy the full width */
+	.row {
+			margin-left: 0;
+			margin-right: 0;
+			margin-top: 0; /* Remove top margin */
+	}
+
+	.col, .sm-12 {
+			width: 100% !important;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+	}
+
+	/* Optional: Ensure there is no extra padding/margin in the paper container */
+	.paper {
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+			margin-top: 0 !important; /* Remove top margin */
+	}
+	
+	.site {
+		margin-top: -25px !important;
+	}
+
+	/* Ensure text blocks are also responsive */
+	.demo-title, .section {
+			padding-left: 15px; /* Optional: Add some padding to avoid content touching the edges */
+			padding-right: 15px; /* Optional: Add some padding to avoid content touching the edges */
+	}
+	
+	p {
+		text-align: left;
+	}
+	
+	blockquote:before {
+		content: none;
+	}		
+}
