@@ -1,4 +1,4 @@
-# Building a Modular Flask Library App with Dynamic Markdown Rendering
+# Modular Flask Library App with Dynamic Markdown Rendering
 
 **"A modular Flask web application for dynamically rendering books from Markdown, allowing easy navigation through volumes and chapters."**
 
@@ -55,4 +55,5 @@ flibrary/                    # Cross-platform Flask project (Windows and Debian,
 │   └── users.db             # SQLite database for the user authentication system
 ├── flaskapp.wsgi            # WSGI entry point for Apache/mod_wsgi (used on Debian deployment)
 └── venv/                    # Virtual environment (excluded from version control)
+
 ```
