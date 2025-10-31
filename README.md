@@ -1,4 +1,4 @@
-# Modular Flask Library App with Dynamic Markdown Rendering
+# Building a Modular Flask Library App with Dynamic Markdown Rendering
 
 **"A modular Flask web application for dynamically rendering books from Markdown, allowing easy navigation through volumes and chapters."**
 
@@ -19,14 +19,14 @@ flibrary/                    # Cross-platform Flask project (Windows and Debian,
 │   │   ├── sitemap.py       # Sitemap blueprint
 │   │   └── search.py        # Search blueprint
 │   ├── models/              # Optional: database models or ORM classes
-│   │   ├── __init__.py
-│   │   └── user.py
-│   ├── utils/               # Optional: helper functions or shared utilities
-│   │   ├── __init__.py
-│   │   └── markdown.py
-│   └── services/            # Optional: business logic or API integrations
-│       ├── __init__.py
-│       └── email_service.py
+│   │   ├── __init__.py      # Marks the models directory as a Python package
+│   │   └── user.py          # Example model: user account representation
+│   └── utils/               # Helper functions or shared utilities
+│       ├── __init__.py      # Marks the utils directory as a Python package
+│       ├── helpers.py       # General-purpose helper functions
+│       ├── breadcrumb.py    # Builds breadcrumb navigation dynamically
+│       ├── sections.py      # Handles section/volume/chapter organization
+│       └── markdown.py      # Markdown file rendering and conversion to HTML
 ├── templates/               # HTML templates
 │   ├── base.html            # Base layout template
 │   ├── 404.html             # 404 error page
@@ -50,10 +50,9 @@ flibrary/                    # Cross-platform Flask project (Windows and Debian,
 │   │   └── theme.js         # Dark/light mode toggle script
 │   └── images/              # Image assets
 │       ├── geometry2.png    # Background image
-│       └── favicon.ico      # Favicon
+│       └── book_207114.png  # Favicon
 ├── data/                    # Data directory for SQLite or JSON storage
 │   └── users.db             # SQLite database for the user authentication system
 ├── flaskapp.wsgi            # WSGI entry point for Apache/mod_wsgi (used on Debian deployment)
 └── venv/                    # Virtual environment (excluded from version control)
-
 ```
