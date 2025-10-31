@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2>
+<h3>
 {% if breadcrumb %}
     {% for name, url in breadcrumb %}
         {% if not loop.last %}
-            <a href="{{ url }}">{{ name }}</a> &raquo; 
+            <a class="ff-heading" href="{{ url }}">{{ name }}</a> &raquo; 
         {% else %}
             {{ name }}
         {% endif %}
@@ -13,7 +13,7 @@
 {% else %}
     {{ page_title }}
 {% endif %}
-</h2>
+</h3>
 
 <div>
 {% if links %}
