@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="PaperCSS - the less formal CSS framework.">
-    <title>Raito Noberu Toshokan - ライトノベル図書館</title>
-    <link href="https://unpkg.com/papercss@1.9.2/dist/paper.min.css" rel="stylesheet">    
+    <title>{{ page_title }} - Raito Noberu Toshokan</title>
     <link href="{{ url_for('static', filename='img/book_207114.png') }}" rel="icon" type="image/x-icon">
     <link href="{{ url_for('static', filename='css/paper.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
@@ -17,13 +16,13 @@
           <div class="demo-title">
             <div class="row flex-center">
               <div class="text-center">
-                <h1 style="font-weight:bold;" title="ライトノベル図書館 Raito Noberu Toshokan">らいぶらり</h1>
-                <h2 style="font-weight:bold;" title="PaperCSS ぺーぱしーえすえす ふれーむわーく">the less formal CSS framework</h2>
+                <h1 class="fw-bold" title="ライトノベル図書館 Raito Noberu Toshokan">らいぶらり</h1>
+                <h2 class="fw-bold" title="PaperCSS ぺーぱしーえすえす ふれーむわーく">the less formal CSS framework</h2>
               </div>
             </div>
             <div class="row flex-center child-borders">
-              <a class="paper-btn margin" href="{{ url_for('home.home') }}">Home</a>
-              <a class="paper-btn margin" href="{{ url_for('books.books_index') }}" target="_blank">Books</a>
+              <a class="paper-btn margin" href="{{ url_for('home.index') }}">Home</a>
+              <a class="paper-btn margin" href="{{ url_for('books.index') }}" target="_blank">Books</a>
               <a class="paper-btn margin" href="#" onclick="toggleTheme()">Theme</a>
               <a href="https://github.com/padiks" target="_blank" class="paper-btn margin">Github</a>
               <a class="paper-btn margin" href="https://www.getpapercss.com/about/">About</a>              
@@ -33,9 +32,7 @@
             <a href="#top" class="paper-btn margin">^</a>
           </div>
           <div class="section">
-            <!-- /Content start -->
             {% block content %}{% endblock %}            
-            <!-- /Content end -->
             <hr>
             <p><u>「物語散策」EXPLORE the worlds of imagination and adventure through these tales. Each story invites you to travel beyond the ordinary, meet unforgettable characters, and experience journeys that stay with you long after the last page is turned.</u></p>
             <blockquote>
@@ -52,13 +49,12 @@
               <input id="collapsible-components" type="radio" name="collapsible">
               <label for="collapsible-components">Sections</label>
               <div class="collapsible-body">
-<ul>
-  <li>Articles</li>
-  <li><a href="{{ url_for('books.books_index') }}">Books</a></li>
-  <li>Lyrics</li>
-  <li><a href="{{ url_for('tutorials.index') }}">Tutorials</a></li>
-</ul>
-
+                <ul>
+                  <li>Articles</li>
+                  <li><a href="{{ url_for('books.index') }}">Books</a></li>
+                  <li>Lyrics</li>
+                  <li><a href="{{ url_for('tutorials.index') }}">Tutorials</a></li>
+                </ul>
               </div>
             </div>
             <div class="collapsible full-width">

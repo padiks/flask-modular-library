@@ -315,12 +315,16 @@ pre, code {
   background-color: #ddd;
 }
 
-.font-heading {
+.ff-heading {
   font-family: "IM Fell English", Arial, sans-serif;
 }
 
-.font-body {
+.ff-body {
   font-family: "Neucha", Arial, Helvetica, sans-serif !important;
+}
+
+.fw-bold {
+  font-weight: bold;
 }
 
 

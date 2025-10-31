@@ -7,5 +7,5 @@ laboris nisi ut aliquip ex ea commodo consequat. [Read more.](https://www.lipsum
 
 #### Tags
 
-Light Novel
+Light Novel, Books
 

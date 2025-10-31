@@ -1,5 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Tutorials Section</h1>
-<p>Coming soon...</p>
+
+<h2>
+{% if breadcrumb %}
+    {% for name, url in breadcrumb %}
+        {% if not loop.last %}
+            <a href="{{ url }}">{{ name }}</a> &raquo; 
+        {% else %}
+            {{ name }}
+        {% endif %}
+    {% endfor %}
+{% else %}
+    {{ page_title }}
+{% endif %}
+</h2>
+
+<div>
+{% if links %}
+    <ul>
+    {% for link in links %}
+        <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+{% if content %}
+    <div>{{ content|safe }}</div>
+{% endif %}
+</div>
+
 {% endblock %}
