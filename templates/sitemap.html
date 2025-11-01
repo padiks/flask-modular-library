@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="title">Sitemap</h2>
+<div class="content">
+
+  {% if not sections %}
+    <p>No files found.</p>
+  {% else %}
+    <ul>
+      {% for section_name, items in sections.items() %}
+        <li><strong>{{ section_name }}</strong>
+          <ul>
+            {% for item in items %}
+              <li>
+                <a href="{{ url_for('md.render_md', md_path=item['path']) }}">
+                  {{ item['title'] }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+{% endblock %}
