@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Spectral:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Three Column HTML+CSS Template</title>
+<script>
+  const svg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect x="10" y="10" width="30" height="30" fill="#1e90ff"/>
+  <rect x="60" y="10" width="30" height="30" fill="#ff6347"/>
+  <circle cx="50" cy="70" r="20" fill="#32cd32"/>
+</svg>`;
+  const svgBlob = new Blob([svg], {type: 'image/svg+xml'});
+  const url = URL.createObjectURL(svgBlob);
+  const link = document.createElement('link');
+  link.rel = 'icon';
+  link.href = url;
+  document.head.appendChild(link);
+</script>
+<style>
+/* ----------- Mobile first / Default ----------- */
+html {
+  scroll-behavior: smooth;
+}
+body { 
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: 1.25rem;
+  line-height: 1.5;
+  line-height: 1.6;
+  padding: 10px;
+}	
+.content {
+  column-count: 1;
+  column-gap: 1rem;
+  column-width: auto;
+  text-align: left;
+  max-width: 100%;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0.9375rem;
+  line-height: 1.6;
+}
+pre {
+  background-color: #f5f5f5;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  overflow-x: auto;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #333;
+  margin-bottom: 1rem;
+}
+pre code {
+  font-family: inherit; 
+  font-size: inherit;
+  color: inherit;
+  background: none;     
+  padding: 0;
+  border-radius: 0;
+}
+code {
+  font-family: monospace;
+  font-size: 0.9rem;
+  background-color: #f5f5f5;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.2rem;
+  color: #333;
+}
+a {
+  color: #888; 
+  font-style: italic;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+a:hover {
+	text-decoration: underline;
+  animation: shake 0.3s;	
+	cursor: pointer;
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}	
+blockquote {
+  font-style: italic;
+  color: #555;
+  border-left: 0.25rem solid #ccc; 
+  padding: 0.75rem 1rem;
+  margin: 1.5rem auto;
+  background-color: #f8f9fa;
+  border-radius: 0.25rem;
+  width: 99%;
+  box-sizing: border-box;
+}
+blockquote p {
+  margin: 0;
+  padding: 0;
+}
+blockquote::before,
+blockquote::after {
+  content: none;
+}
+hr.gray {
+  border: none;
+  height: 4px;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  border-radius: 2px;
+  margin-top: 0.5em;   /* reduced top space */
+  margin-bottom: 1.5em; /* increased bottom space */
+}
+hr {
+  border: none;
+  height: 4px;
+  background: linear-gradient(to right, 
+    transparent, 
+    #ff512f, 
+    #dd2476, 
+    transparent
+  );
+  border-radius: 2px;
+  margin-top: 0.5em;    /* reduced top space */
+  margin-bottom: 1.5em; /* increased bottom space */
+  width: 60%;           /* shorter line */
+  margin-left: auto;
+  margin-right: auto;   /* center align */
+}
+.first-word {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.notice {
+  background-color: #fafafa;   /* very light gray background */
+  border: 1px solid #e0e0e0;   /* soft gray border */
+  border-radius: 0.25rem;      /* rounded corners */
+  padding: 1rem;               /* spacing inside the box */
+  margin: 1rem 0;              /* spacing outside the box */
+  color: #333;                 /* text color */
+  line-height: 1.5;
+}
+.muted {
+  background-color: #f0f0f0;   /* very light gray background */
+  border: none;                 /* no border */
+  border-radius: 0;             /* sharp corners */
+  padding: 1rem;                /* spacing inside the box */
+  margin: 1rem 0;               /* spacing outside the box */
+  color: #555;                  /* softer, lighter gray text */
+  line-height: 1.5;
+}
+.inverted {
+  background-color: #222;       /* dark background (near black) */
+  border: 1px solid #444;       /* dark gray border */
+  border-radius: 0.25rem;       /* rounded corners */
+  padding: 1rem;                /* spacing inside the box */
+  margin: 1rem 0;               /* spacing outside the box */
+  color: #f5f5f5;               /* very light text */
+  line-height: 1.5;
+}
+.subtitle {
+  text-align: left;  
+  font-size: 0.9rem; 
+  color: #555;       
+  margin: 0 0 1em 0; 
+  text-align: center;
+}
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.u {
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.5); /* black at 50% opacity */
+  text-decoration-style: solid;
+  text-decoration-thickness: 1px;           /* thinner line */
+}
+.bookmark {
+  display: inline-block;
+  background-color: yellow; /* Highlight color */
+  color: black;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 2px dashed red; /* optional extra visual cue */
+  animation: blink 1s infinite; /* optional blinking effect */
+}
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0.3; }
+}
+#goToTop {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+#goToTop:hover {
+  background-color: #0056b3;
+}
+/* ----------- Desktop / Larger screens ----------- */
+@media (min-width: 768px) {
+  body {
+    margin: 2.5rem;
+    padding: 0;
+    background-color: #fff;
+	}
+  body {
+    font-family: Spectral, Arial, Helvetica, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+  }	
+  .content {
+    column-count: 3;
+    column-gap: 2.5rem; /* 40px */
+    column-width: 34.1875rem; /* 547px */
+    max-width: calc(3 * 34.1875rem + 2 * 2.5rem); /* total width of 3 columns + gaps */
+    text-align: justify;
+    margin: 0 auto; 
+	}
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    text-align: justify;
+  }
+}
+</style>
+</head>
+<body>
+<a href="#top" id="goToTop">?</a>
+<div id="top"></div> 
+<div class="content">
+
+<h1>Lorem ipsum dolor sit</h1>
+
+<p class="subtitle">10 Sept 2025 &middot; <a href="https://www.lipsum.com/">More on Lorem ipsum</a></p>
+
+<p><span class="first-word">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+<!-- Bookmark -->
+<span class="bookmark">&#128204;  Bookmark </span>
+
+<blockquote>
+<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</blockquote>
+
+<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<hr>
+
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+
+<p class="notice">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+
+<p class="muted">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+
+<hr>
+
+<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+
+<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+		
+<hr>
+		
+<p>Curabitur sagittis, libero eget malesuada dapibus, erat nunc ullamcorper nunc, ac tincidunt justo libero vitae lectus. Vivamus non risus id tortor blandit tincidunt et sit amet erat.</p>
+
+<p class="inverted">Fusce euismod, odio ut commodo fermentum, lacus purus pretium nunc, sed laoreet sapien magna in metus. Suspendisse potenti. Aliquam erat volutpat.</p>
+
+<p>Maecenas finibus, libero a fringilla dapibus, risus lacus aliquet nunc, nec laoreet elit justo id libero. Integer vitae nisi ac justo ullamcorper consectetur.</p>
+
+<p class="u">Vivamus tincidunt, justo nec efficitur dapibus, sapien sapien fringilla lorem, at vestibulum libero odio at nisl. Integer ut purus at metus vulputate luctus.</p>
+
+<p>Proin euismod, mauris sit amet facilisis luctus, neque risus tincidunt libero, a hendrerit justo nisl a erat. Nulla facilisi. Suspendisse potenti.</p>
+		
+</div>
+<script>
+  window.onload = function() {
+    const bookmark = document.querySelector('.bookmark');
+    if (bookmark) {
+      bookmark.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+</script>
+</body>
+</html>

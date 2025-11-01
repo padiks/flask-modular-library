@@ -33,6 +33,7 @@ flibrary/                      # Cross-platform Flask project (Windows and Debia
 │   ├── 404.html               # 404 error page
 │   ├── home.html              # Home page template
 │   ├── about.html             # About page template
+│   ├── search.html            # Search results page template
 │   ├── sitemap.html           # Updated modular sitemap template, links via md.render_md
 │   ├── books/                 # Templates related to books
 │   │   └── index.html         # Books listing template
@@ -50,9 +51,11 @@ flibrary/                      # Cross-platform Flask project (Windows and Debia
 │   │   └── style.css          # Custom style file
 │   ├── js/                    # JavaScript files
 │   │   └── theme.js           # Dark/light mode toggle script
-│   └── images/                # Image assets
-│       ├── geometry2.png      # Background image
-│       └── book_207114.png    # Favicon
+│   ├── images/                # Image assets
+│   │   ├── geometry2.png      # Background image
+│   │   └── book_207114.png    # Favicon
+│   └── page/                  # Custom static page folder
+│       └── index.html         # Static page (e.g., three-column page)
 ├── data/                      # Data directory for SQLite or JSON storage
 │   └── users.db               # SQLite database for the user authentication system
 ├── flaskapp.wsgi              # WSGI entry point for Apache/mod_wsgi
