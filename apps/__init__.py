@@ -20,7 +20,6 @@ def create_app():
     from .routes.about import bp as about_bp
     from .routes.books import bp as books_bp
     from .routes.tutorials import bp as tutorials_bp
-
     from .routes.sitemap import bp as sitemap_bp		
     from .routes.markdown_render import bp as md_bp
 		
@@ -28,10 +27,13 @@ def create_app():
     app.register_blueprint(about_bp, url_prefix='/about')    
     app.register_blueprint(books_bp, url_prefix='/books')
     app.register_blueprint(tutorials_bp, url_prefix='/tutorials')
-		
     app.register_blueprint(sitemap_bp, url_prefix='/sitemap')		
-    app.register_blueprint(md_bp)		
+    app.register_blueprint(md_bp)
 
+    from .routes.search import bp as search_bp
+    app.register_blueprint(search_bp, url_prefix='/search')
+		
+		
     # ----------------------
     # 404 handler
     # ----------------------

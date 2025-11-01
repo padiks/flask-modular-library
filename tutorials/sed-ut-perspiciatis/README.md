@@ -8,4 +8,3 @@ beatae vitae dicta sunt explicabo. [Read more.](https://www.lipsum.com/)
 #### Tags
 
 Flask, Python, Tutorials
-

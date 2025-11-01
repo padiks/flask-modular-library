@@ -17,7 +17,7 @@
             <div class="row flex-center">
               <div class="text-center">
                 <h1 class="fw-bold" title="ライトノベル図書館 Raito Noberu Toshokan">らいぶらり</h1>
-                <h2 class="fw-bold" title="PaperCSS ぺーぱしーえすえす ふれーむわーく">the less formal CSS framework</h2>
+                <h2 class="fw-bold" style="font-size: 1.5em" title="PaperCSS - the less formal CSS framework">ぺーぱしーえすえす ふれーむわーく</h2>
               </div>
             </div>
             <div class="row flex-center child-borders">
@@ -26,7 +26,7 @@
               <a class="paper-btn margin" href="{{ url_for('sitemap.index') }}">Sitemap</a>							
               <a class="paper-btn margin" href="#" onclick="toggleTheme()">Theme</a>
               <a href="https://github.com/padiks" target="_blank" class="paper-btn margin">Github</a>
-              <a class="paper-btn margin" href="{{ url_for('about.index') }}">About</a>              
+              <a class="paper-btn margin" href="{{ url_for('about.index') }}">About</a> 
             </div>
           </div>
           <div class="to-top">
@@ -74,25 +74,26 @@
               <label for="collapsible-tags">Tags</label>
               <div class="collapsible-body">
                 <div class="tag-container">
-                  <a href="debian" class="tag">Debian</a>
-                  <a href="flask" class="tag">Flask</a>
-                  <a href="freebsd" class="tag">FreeBSD</a>
-                  <a href="light novel" class="tag">Light Novel</a>
-                  <a href="linux" class="tag">Linux</a>
-                  <a href="lyrics" class="tag">Lyrics</a>
-                  <a href="python" class="tag">Python</a>
-                  <a href="web novel" class="tag">Web Novel</a>
+                  <a href="{{ url_for('search.index') }}?q=debian" class="tag">Debian</a>
+                  <a href="{{ url_for('search.index') }}?q=flask" class="tag">Flask</a>
+                  <a href="{{ url_for('search.index') }}?q=freebsd" class="tag">FreeBSD</a>
+                  <a href="{{ url_for('search.index') }}?q=light novel" class="tag">Light Novel</a>
+                  <a href="{{ url_for('search.index') }}?q=lyrics" class="tag">Lyrics</a>
+                  <a href="{{ url_for('search.index') }}?q=markdown" class="tag">Markdown</a>									
+                  <a href="{{ url_for('search.index') }}?q=python" class="tag">Python</a>
+                  <a href="{{ url_for('search.index') }}?q=web novel" class="tag">Web Novel</a>
                 </div>
               </div>
             </div>
             <div class="full-width">
               <label for="collapsible-search" class="sidebar-title"><br></label>
-              <div class="collapsible-body">
-                <form action="/search" method="get">
-                  <input type="text" name="q" placeholder="Search..." class="paper-input" style="width: calc(100% - 20px); padding: 0.5em; margin-left: 20px;">
-                  <button type="submit" class="paper-btn" style="margin-top:0.5em; margin-left: 20px;">Search</button>
-                </form>
-              </div>
+<!-- This is your search form -->
+<div class="collapsible-body">
+    <form action="{{ url_for('search.index') }}" method="get">
+        <input type="text" name="q" placeholder="Search..." class="paper-input" style="width: calc(100% - 20px); padding: 0.5em; margin-left: 20px;">
+        <button type="submit" class="paper-btn" style="margin-top: 0.5em; margin-left: 20px;">Search</button>
+    </form>
+</div>
             </div>
           </div>
         </div>
@@ -104,6 +105,7 @@
         Made with 💛 by <a href="https://vlaservich.com" target="_blank">Rhyne</a> and some <a href="https://github.com/rhyneav/papercss/graphs/contributors" target="_blank">fantastic contributors</a>!
         Designed by <a href="https://www.getpapercss.com/" target="_blank">PaperCSS</a>.
         Favicon by <a href="https://www.freepik.com/" target="_blank">Freepik</a>
+				Powered by <a href="https://flask.palletsprojects.com/en/stable/" target="_blank">Flask Web Framework</a>
       </p>
     </footer>
     <script src="{{ url_for('static', filename='js/theme.js') }}"></script>

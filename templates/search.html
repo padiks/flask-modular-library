@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Search results for "{{ query }}"</h1>
+    {% if results %}
+        <ul>
+        {% for result in results %}
+            <li>
+                <a href="{{ url_for(result.section + '.dynamic', subpath=result.path) }}">
+                    <strong>[{{ result.section }}] {{ result.path }}</strong>
+                </a>
+                <p>{{ result.match_snippet }}</p>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found for "{{ query }}"</p>
+    {% endif %}
+{% endblock %}
